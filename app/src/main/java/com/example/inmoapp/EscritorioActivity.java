@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.inmoapp.modelo.Propietario;
+import com.example.inmoapp.request.ApiClient;
+import com.example.inmoapp.ui.perfil.PerfilFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,12 +47,24 @@ public class EscritorioActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_perfil, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_escritorio);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        View navView = binding.navView.getHeaderView(0);
+
+        ImageView imageView = (ImageView) navView.findViewById(R.id.imageView);
+        imageView.setImageResource(ApiClient.getApi().obtenerUsuarioActual().getAvatar());
+
+        TextView textViewMail = (TextView) navView.findViewById(R.id.tvMailHeader);
+        textViewMail.setText(ApiClient.getApi().obtenerUsuarioActual().getEmail());
+
+        TextView textViewNombre = (TextView) navView.findViewById(R.id.tvNombreHeader);
+        textViewNombre.setText(ApiClient.getApi().obtenerUsuarioActual().getNombre());
+
     }
 
     @Override

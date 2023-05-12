@@ -30,7 +30,7 @@ public class MainActivityViewModel extends AndroidViewModel {
         Propietario propietario = api.login(mail,password);
         if(propietario!=null){
             Intent intent = new Intent(context, EscritorioActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
 
