@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.inmuebles.DescripcionFragment">
+
+    <ImageView
+        android:id="@+id/ivDetalle"
+        android:layout_width="232dp"
+        android:layout_height="221dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvDDireccion"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetalle" />
+
+    <TextView
+        android:id="@+id/tvDUso"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDDireccion" />
+
+    <TextView
+        android:id="@+id/tvDTipo"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDUso" />
+
+    <TextView
+        android:id="@+id/tvDAmbientes"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDTipo" />
+
+    <TextView
+        android:id="@+id/tvDPrecio"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDAmbientes" />
+
+    <Switch
+        android:id="@+id/swDActivo"
+        android:layout_width="202dp"
+        android:layout_height="60dp"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Estado"
+        android:textOff="Inactivo"
+        android:textOn="Activo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDPrecio"
+        app:layout_constraintVertical_bias="0.251" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
