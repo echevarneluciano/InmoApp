@@ -16,5 +16,9 @@
             android:id="@+id/nav_inmuebles"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_inmuebles" />
+        <item
+            android:id="@+id/nav_inquilinos"
+            android:icon="?android:attr/fingerprintAuthDrawable"
+            android:title="@string/menu_inquilinos" />
     </group>
 </menu>

@@ -12,5 +12,6 @@
     <string name="menu_perfil">Perfil</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_ubicacion">Ubicacion</string>>
-    <string name="menu_inmuebles">Inmuebles</string>>
+    <string name="menu_inmuebles">Inmuebles</string>
+    <string name="menu_inquilinos">Inquilinos</string>
 </resources>
