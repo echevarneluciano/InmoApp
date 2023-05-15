@@ -73,9 +73,9 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.View
                 public void onClick(View v) {
 
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("inquilinos", inquilinos.get(getAdapterPosition()));
+                    bundle.putSerializable("inquilino", inquilinos.get(getAdapterPosition()));
 
-                    //Navigation.findNavController( (Activity)context,R.id.nav_host_fragment_content_escritorio).navigate(R.id.action_nav_inmuebles_to_descripcionFragment,bundle);
+                    Navigation.findNavController( (Activity)context,R.id.nav_host_fragment_content_escritorio).navigate(R.id.action_nav_inquilinos_to_detallesFragment,bundle);
                 }
             });
         }

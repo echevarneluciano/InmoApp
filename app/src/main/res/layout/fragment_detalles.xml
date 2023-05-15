@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.inquilinos.DetallesFragment">
+
+    <TextView
+        android:id="@+id/tvDDni"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="200dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDNombre"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDDni" />
+
+    <TextView
+        android:id="@+id/tvDApellido"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDNombre" />
+
+    <TextView
+        android:id="@+id/tvDTrabajo"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDApellido" />
+
+    <TextView
+        android:id="@+id/tvDEmail"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDTrabajo" />
+
+    <TextView
+        android:id="@+id/tvDTelefono"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDEmail" />
+
+    <TextView
+        android:id="@+id/tvDGaranteNombre"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDTelefono" />
+
+    <TextView
+        android:id="@+id/tvDGaranteTelefono"
+        android:layout_width="201dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDGaranteNombre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,5 +20,9 @@
             android:id="@+id/nav_inquilinos"
             android:icon="?android:attr/fingerprintAuthDrawable"
             android:title="@string/menu_inquilinos" />
+        <item
+            android:id="@+id/nav_contratos"
+            android:icon="?android:attr/actionModeFindDrawable"
+            android:title="@string/menu_contratos" />
     </group>
 </menu>

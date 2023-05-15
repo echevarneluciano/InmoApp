@@ -39,5 +39,18 @@
         android:id="@+id/nav_inquilinos"
         android:name="com.example.inmoapp.ui.inquilinos.InquilinosFragment"
         android:label="Inquilinos"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilinos_to_detallesFragment"
+            app:destination="@id/detallesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallesFragment"
+        android:name="com.example.inmoapp.ui.inquilinos.DetallesFragment"
+        android:label="Detalles"
+        tools:layout="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/action_detallesFragment_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
+    </fragment>
 </navigation>
