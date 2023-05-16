@@ -16,40 +16,36 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inmoapp.R;
-import com.example.inmoapp.databinding.FragmentContratosBinding;
-import com.example.inmoapp.modelo.Contrato;
-import com.example.inmoapp.modelo.Inquilino;
-import com.example.inmoapp.request.ApiClient;
-import com.example.inmoapp.ui.inmuebles.InmuebleAdapter;
-import com.example.inmoapp.ui.inquilinos.InquilinoAdapter;
 
+import com.example.inmoapp.databinding.FragmentPagosBinding;
+import com.example.inmoapp.modelo.Contrato;
+import com.example.inmoapp.modelo.Pago;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class ContratosFragment extends Fragment {
+public class PagosFragment extends Fragment {
 
-    private ContratosViewModel mViewModel;
-    private FragmentContratosBinding binding;
+    private PagosViewModel mViewModel;
+    private FragmentPagosBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        mViewModel = new ViewModelProvider(this).get(ContratosViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(PagosViewModel.class);
 
-        binding = FragmentContratosBinding.inflate(inflater, container, false);
+        binding = FragmentPagosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        RecyclerView recyclerView = binding.rvListaContratos;
+        RecyclerView recyclerView = binding.rvListaPagos;
         GridLayoutManager grilla = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(grilla);
-        mViewModel.getContratos();
 
-        mViewModel.getContratosMutable().observe(getViewLifecycleOwner(), new Observer<List<Contrato>>() {
-            @Override
-            public void onChanged(List<Contrato> contratos) {
-                ContratoAdapter adapter = new ContratoAdapter(getContext(), contratos, getLayoutInflater());
-                recyclerView.setAdapter(adapter);
-            }
-        });
+        List<Pago> pago = new ArrayList<>();
+        pago = (List<Pago>) getArguments().getSerializable("pagos");
+
+        PagoAdapter adapter = new PagoAdapter(getContext(),  pago, getLayoutInflater());
+        recyclerView.setAdapter(adapter);
 
         return root;
     }
@@ -57,7 +53,7 @@ public class ContratosFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ContratosViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(PagosViewModel.class);
         // TODO: Use the ViewModel
     }
 

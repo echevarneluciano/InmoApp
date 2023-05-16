@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_perfil">
+    app:startDestination="@+id/nav_inmuebles">
 
     <fragment
         android:id="@+id/nav_ubicacion"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/descripcionFragment"
         android:name="com.example.inmoapp.ui.inmuebles.DescripcionFragment"
-        android:label="fragment_descripcion"
+        android:label="Descripcion"
         tools:layout="@layout/fragment_descripcion" >
         <action
             android:id="@+id/action_descripcionFragment_to_nav_inmuebles"
@@ -52,5 +52,23 @@
         <action
             android:id="@+id/action_detallesFragment_to_nav_inquilinos"
             app:destination="@id/nav_inquilinos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contratos"
+        android:name="com.example.inmoapp.ui.contratos.ContratosFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contratos" >
+        <action
+            android:id="@+id/action_nav_contratos_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.example.inmoapp.ui.contratos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_pagosFragment_to_nav_contratos"
+            app:destination="@id/nav_contratos" />
     </fragment>
 </navigation>

@@ -7,46 +7,37 @@
     tools:context=".login.MainActivity">
 
     <EditText
-        android:id="@+id/etPass"
-        android:layout_width="259dp"
-        android:layout_height="55dp"
-        android:hint="Pass"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/btLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
-
-    <EditText
         android:id="@+id/etMail"
-        android:layout_width="259dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="100dp"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="110dp"
         android:hint="Mail"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/btLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:hint="Pass"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMail" />
 
     <Button
         android:id="@+id/btLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
         android:text="Login"
-        app:layout_constraintBottom_toTopOf="@+id/btRegistro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
-    <Button
-        android:id="@+id/btRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="340dp"
-        android:text="Registro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
