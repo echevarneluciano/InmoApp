@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="280dp"
+    android:layout_height="370dp"
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
@@ -18,45 +18,83 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/tvPnumero"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPnumero2"
+            android:layout_width="150dp"
             android:layout_height="28dp"
-            android:layout_marginTop="48dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Numero:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvPContrato"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPFecha2"
+            android:layout_width="150dp"
             android:layout_height="28dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
+            android:text="Fecha de pago:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPImporte" />
+
+        <TextView
+            android:id="@+id/tvPContrato2"
+            android:layout_width="150dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Domicilio Inmueble:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPnumero" />
 
         <TextView
-            android:id="@+id/tvPImporte"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPImporte2"
+            android:layout_width="150dp"
             android:layout_height="28dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
+            android:text="Importe:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPContrato" />
 
         <TextView
-            android:id="@+id/tvPFecha"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPnumero"
+            android:layout_width="170dp"
             android:layout_height="28dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="48dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPnumero2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPContrato"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="60dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPContrato2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPnumero" />
+
+        <TextView
+            android:id="@+id/tvPImporte"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="60dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPImporte2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPContrato" />
+
+        <TextView
+            android:id="@+id/tvPFecha"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="60dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPFecha2"
             app:layout_constraintTop_toBottomOf="@+id/tvPImporte" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,36 +18,60 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/tvIDni"
-            android:layout_width="101dp"
+            android:id="@+id/tvIDni2"
+            android:layout_width="75dp"
             android:layout_height="28dp"
             android:layout_marginTop="50dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
+            android:text="D.N.I:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvINombre"
-            android:layout_width="101dp"
+            android:id="@+id/tvIApellido2"
+            android:layout_width="75dp"
             android:layout_height="28dp"
             android:layout_marginTop="20dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
+            android:text="Apellido:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvINombre" />
+
+        <TextView
+            android:id="@+id/tvINombre2"
+            android:layout_width="75dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Nombre:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvIDni" />
 
         <TextView
-            android:id="@+id/tvIApellido"
-            android:layout_width="101dp"
+            android:id="@+id/tvIDni"
+            android:layout_width="85dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="50dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvIDni2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvINombre"
+            android:layout_width="85dp"
             android:layout_height="28dp"
             android:layout_marginTop="20dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvINombre2"
+            app:layout_constraintTop_toBottomOf="@+id/tvIDni" />
+
+        <TextView
+            android:id="@+id/tvIApellido"
+            android:layout_width="85dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvIApellido2"
             app:layout_constraintTop_toBottomOf="@+id/tvINombre" />
 
         <Button
