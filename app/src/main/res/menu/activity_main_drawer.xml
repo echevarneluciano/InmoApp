@@ -14,7 +14,7 @@
             android:title="Perfil" />
         <item
             android:id="@+id/nav_inmuebles"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_menu_compass"
             android:title="@string/menu_inmuebles" />
         <item
             android:id="@+id/nav_inquilinos"
@@ -24,5 +24,9 @@
             android:id="@+id/nav_contratos"
             android:icon="?android:attr/actionModeFindDrawable"
             android:title="@string/menu_contratos" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="?attr/homeAsUpIndicator"
+            android:title="@string/menu_logout" />
     </group>
 </menu>

@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/descripcionFragment"
         android:name="com.example.inmoapp.ui.inmuebles.DescripcionFragment"
-        android:label="Descripcion"
+        android:label="Detalles"
         tools:layout="@layout/fragment_descripcion" >
         <action
             android:id="@+id/action_descripcionFragment_to_nav_inmuebles"
@@ -71,4 +71,11 @@
             android:id="@+id/action_pagosFragment_to_nav_contratos"
             app:destination="@id/nav_contratos" />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.inmoapp.ui.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" />
+
 </navigation>

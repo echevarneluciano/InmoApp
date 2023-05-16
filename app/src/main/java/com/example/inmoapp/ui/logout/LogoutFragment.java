@@ -2,6 +2,8 @@ package com.example.inmoapp.ui.logout;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,9 @@ public class LogoutFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        mostrarDialogoSalir();
+
         return inflater.inflate(R.layout.fragment_logout, container, false);
     }
 
@@ -33,6 +38,19 @@ public class LogoutFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(LogoutViewModel.class);
         // TODO: Use the ViewModel
+    }
+
+    private void mostrarDialogoSalir() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("¿Desea deslogearse de la aplicación?");
+        builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getActivity().finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
 
 }

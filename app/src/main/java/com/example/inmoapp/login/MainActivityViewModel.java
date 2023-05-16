@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -27,13 +28,18 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public void login(String mail, String password){
-        Propietario propietario = api.login(mail,password);
-        if(propietario!=null){
-            Intent intent = new Intent(context, EscritorioActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
+        try {
+            Propietario propietario = api.login(mail, password);
+            if (propietario != null) {
+                Intent intent = new Intent(context, EscritorioActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }else{
+                Toast.makeText(context, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception e){
+            Toast.makeText(context, "Error, informe a soporte.", Toast.LENGTH_LONG).show();
         }
-
     }
 
 }
