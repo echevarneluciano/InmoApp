@@ -34,7 +34,7 @@
                 android:id="@+id/ivDetalle"
                 android:layout_width="232dp"
                 android:layout_height="221dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="45dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
@@ -131,10 +131,10 @@
 
             <Switch
                 android:id="@+id/swDActivo"
-                android:layout_width="100dp"
-                android:layout_height="33dp"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="36dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Estado"
                 android:textOff="Inactivo"
@@ -145,6 +145,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDPrecio"
                 app:layout_constraintVertical_bias="0.066" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:text="Detalles"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
