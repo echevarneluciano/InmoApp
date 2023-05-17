@@ -13,15 +13,29 @@ import androidx.lifecycle.ViewModel;
 import com.example.inmoapp.modelo.Propietario;
 import com.example.inmoapp.request.ApiClient;
 
-public class PerfilViewModel extends ViewModel {
+public class PerfilViewModel extends AndroidViewModel {
 
     private  MutableLiveData<Boolean> habilitaEdicion;
+    private ApiClient apiClient;
+    private MutableLiveData<Propietario> propietario;
 
-    public MutableLiveData<Boolean> getHabilitaEdicion() {
+    public PerfilViewModel(@NonNull Application application) {
+        super(application);
+        apiClient = new ApiClient();
+    }
+
+    public LiveData<Boolean> getHabilitaEdicion() {
         if (habilitaEdicion == null) {
             habilitaEdicion = new MutableLiveData<Boolean>();
         }
         return habilitaEdicion;
+    }
+
+    public LiveData<Propietario> getPropietario() {
+        if (propietario == null) {
+            propietario = new MutableLiveData<Propietario>();
+        }
+        return propietario;
     }
 
     public void editarPerfil(){
@@ -32,7 +46,7 @@ public class PerfilViewModel extends ViewModel {
 
  public void guardarPerfil(String tel, String mail, String nombre, String apellido){
 
-     Propietario propietarioActual= ApiClient.getApi().obtenerUsuarioActual();
+     Propietario propietarioActual= apiClient.obtenerUsuarioActual();
 
      propietarioActual.setTelefono(tel);
      propietarioActual.setEmail(mail);
@@ -40,6 +54,12 @@ public class PerfilViewModel extends ViewModel {
      propietarioActual.setApellido(apellido);
 
      ApiClient.getApi().actualizarPerfil(propietarioActual);
+
+ }
+
+ public void cargarPerfilInicioVm(){
+
+        propietario.setValue(apiClient.obtenerUsuarioActual());
 
  }
 

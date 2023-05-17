@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.inmoapp.R;
 import com.example.inmoapp.databinding.FragmentPerfilBinding;
+import com.example.inmoapp.modelo.Propietario;
 import com.example.inmoapp.request.ApiClient;
 
 public class PerfilFragment extends Fragment {
@@ -27,13 +28,15 @@ public class PerfilFragment extends Fragment {
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        cargarPerfilInicio();
-
         perfilViewModel.getHabilitaEdicion().observe(getViewLifecycleOwner(), habilitaEdicion -> {
                 binding.tvNombre.setEnabled(true);
                 binding.tvApe.setEnabled(true);
                 binding.tvMail.setEnabled(true);
                 binding.tvTel.setEnabled(true);
+        });
+
+        perfilViewModel.getPropietario().observe(getViewLifecycleOwner(), propietario -> {
+            cargarPerfilInicio(propietario);
         });
 
         binding.btEditar.setOnClickListener(new View.OnClickListener() {
@@ -48,9 +51,11 @@ public class PerfilFragment extends Fragment {
             public void onClick(View view) {
                 perfilViewModel.guardarPerfil(binding.tvTel.getText().toString(), binding.tvMail.getText().toString(),
                         binding.tvNombre.getText().toString(), binding.tvApe.getText().toString());
-                cargarPerfilInicio();
+               perfilViewModel.cargarPerfilInicioVm();
             }
         });
+
+        perfilViewModel.cargarPerfilInicioVm();
 
         return root;
     }
@@ -61,17 +66,17 @@ public class PerfilFragment extends Fragment {
         binding = null;
     }
 
-    public void cargarPerfilInicio(){
+    public void cargarPerfilInicio(Propietario pro){
 
-        binding.tvNombre.setText(ApiClient.getApi().obtenerUsuarioActual().getNombre());
+        binding.tvNombre.setText(pro.getNombre());
         binding.tvNombre.setEnabled(false);
-        binding.tvApe.setText(ApiClient.getApi().obtenerUsuarioActual().getApellido());
+        binding.tvApe.setText(pro.getApellido());
         binding.tvApe.setEnabled(false);
-        binding.tvMail.setText(ApiClient.getApi().obtenerUsuarioActual().getEmail());
+        binding.tvMail.setText(pro.getEmail());
         binding.tvMail.setEnabled(false);
-        binding.tvTel.setText(ApiClient.getApi().obtenerUsuarioActual().getTelefono());
+        binding.tvTel.setText(pro.getTelefono());
         binding.tvTel.setEnabled(false);
-        binding.ivPropietario.setImageResource(ApiClient.getApi().obtenerUsuarioActual().getAvatar());
+        binding.ivPropietario.setImageResource(pro.getAvatar());
     }
 
 

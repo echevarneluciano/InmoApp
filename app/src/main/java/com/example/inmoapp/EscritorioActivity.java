@@ -3,7 +3,6 @@ package com.example.inmoapp;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,12 +12,14 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.inmoapp.modelo.Propietario;
 import com.example.inmoapp.request.ApiClient;
-import com.example.inmoapp.ui.perfil.PerfilFragment;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -32,6 +33,7 @@ public class EscritorioActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityEscritorioBinding binding;
+    private EscritorioActivityViewModel escritorioActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class EscritorioActivity extends AppCompatActivity {
 
         binding = ActivityEscritorioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        escritorioActivity = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(EscritorioActivityViewModel.class);
 
         setSupportActionBar(binding.appBarEscritorio.toolbar);
         /*binding.appBarEscritorio.fab.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +65,20 @@ public class EscritorioActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         View navView = binding.navView.getHeaderView(0);
-
         ImageView imageView = (ImageView) navView.findViewById(R.id.imageView);
-        imageView.setImageResource(ApiClient.getApi().obtenerUsuarioActual().getAvatar());
-
         TextView textViewMail = (TextView) navView.findViewById(R.id.tvMailHeader);
-        textViewMail.setText(ApiClient.getApi().obtenerUsuarioActual().getEmail());
-
         TextView textViewNombre = (TextView) navView.findViewById(R.id.tvNombreHeader);
-        textViewNombre.setText(ApiClient.getApi().obtenerUsuarioActual().getNombre());
 
+        escritorioActivity.getPropietario().observe(this, new Observer<Propietario>() {
+            @Override
+            public void onChanged(Propietario propietario) {
+                imageView.setImageResource(propietario.getAvatar());
+                textViewMail.setText(propietario.getEmail());
+                textViewNombre.setText(propietario.getNombre());
+            }
+        });
+
+        escritorioActivity.setPropietario();
         solicitarPermisos();
 
     }

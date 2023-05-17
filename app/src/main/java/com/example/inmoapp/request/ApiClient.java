@@ -18,7 +18,7 @@ public class ApiClient {
     private static Propietario usuarioActual=null;
     private static ApiClient api=null;
 
-    private ApiClient(){
+    public ApiClient(){
         //Nos conectamos a nuestra "Base de Datos"
         cargaDatos();
     }

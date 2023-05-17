@@ -8,13 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inmoapp.EscritorioActivity;
 import com.example.inmoapp.databinding.FragmentInmueblesBinding;
+import com.example.inmoapp.modelo.Inmueble;
 import com.example.inmoapp.request.ApiClient;
+
+import java.util.ArrayList;
 
 
 public class InmueblesFragment extends Fragment {
@@ -33,8 +37,15 @@ public class InmueblesFragment extends Fragment {
         GridLayoutManager grilla = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(grilla);
 
-        InmuebleAdapter adapter = new InmuebleAdapter(getContext(), ApiClient.getApi().obtnerPropiedades(), getLayoutInflater());
-        recyclerView.setAdapter(adapter);
+        inmueblesViewModel.getPropiedades().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        @Override
+        public void onChanged(ArrayList<Inmueble> inmuebles) {
+            InmuebleAdapter adapter = new InmuebleAdapter(getContext(), inmuebles, getLayoutInflater());
+            recyclerView.setAdapter(adapter);
+        }
+        });
+
+        inmueblesViewModel.setPropiedades();
 
         return root;
     }
