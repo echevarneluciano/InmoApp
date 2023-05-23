@@ -20,9 +20,11 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public class ApiClientRetroFit {
-    private static final String PATH="http://192.168.15.31:5200/api/";//"http://localhost:5500/api/";
+    //private static final String PATH="http://10.120.10.172:5200/api/";//"http://localhost:5500/api/";
+    private static final String PATH="http://192.168.15.31:5200/api/";
     private static  EndPointInmobiliaria endPointInmobiliaria;
 
     public static EndPointInmobiliaria getEndpointInmobiliaria(){
@@ -49,6 +51,9 @@ public class ApiClientRetroFit {
 
         @GET("Propietarios")
         Call<Propietario> obtenerPerfil(@Header("Authorization") String token);
+
+        @PUT("Propietarios/actualizar")
+        Call<Propietario> actualizarPerfil(@Header("Authorization") String token, @Body Propietario propietario);
 
         //        @GET("Inmuebles/{id}") para mandarle un id como parametro (@Path("id") int id)
         @GET("Inmuebles")

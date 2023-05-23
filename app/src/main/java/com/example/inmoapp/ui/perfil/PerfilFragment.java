@@ -51,7 +51,7 @@ public class PerfilFragment extends Fragment {
             public void onClick(View view) {
                 perfilViewModel.guardarPerfil(binding.tvTel.getText().toString(), binding.tvMail.getText().toString(),
                         binding.tvNombre.getText().toString(), binding.tvApe.getText().toString());
-               perfilViewModel.cargarPerfilInicioVm();
+              // perfilViewModel.cargarPerfilInicioVm();
             }
         });
 
