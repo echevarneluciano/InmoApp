@@ -59,17 +59,8 @@
         android:label="Contratos"
         tools:layout="@layout/fragment_contratos" >
         <action
-            android:id="@+id/action_nav_contratos_to_pagosFragment"
-            app:destination="@id/pagosFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/pagosFragment"
-        android:name="com.example.inmoapp.ui.contratos.PagosFragment"
-        android:label="Pagos"
-        tools:layout="@layout/fragment_pagos" >
-        <action
-            android:id="@+id/action_pagosFragment_to_nav_contratos"
-            app:destination="@id/nav_contratos" />
+            android:id="@+id/action_nav_contratos_to_elContratoFragment"
+            app:destination="@id/elContratoFragment" />
     </fragment>
 
     <fragment
@@ -77,5 +68,31 @@
         android:name="com.example.inmoapp.ui.logout.LogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/elContratoFragment"
+        android:name="com.example.inmoapp.ui.contratos.ElContratoFragment"
+        android:label="Contrato" >
+        <action
+            android:id="@+id/action_elContratoFragment_to_nav_contratos"
+            app:destination="@id/nav_contratos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pagos"
+        android:name="com.example.inmoapp.ui.pagos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_nav_pagos_to_pagosContratoFragment"
+            app:destination="@id/pagosContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosContratoFragment"
+        android:name="com.example.inmoapp.ui.pagos.PagosContratoFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos_contrato" >
+        <action
+            android:id="@+id/action_pagosContratoFragment_to_nav_pagos"
+            app:destination="@id/nav_pagos" />
+    </fragment>
 
 </navigation>

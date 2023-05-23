@@ -1,4 +1,4 @@
-package com.example.inmoapp.ui.contratos;
+package com.example.inmoapp.ui.pagos;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -15,11 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.inmoapp.R;
-
 import com.example.inmoapp.databinding.FragmentPagosBinding;
 import com.example.inmoapp.modelo.Contrato;
 import com.example.inmoapp.modelo.Pago;
+import com.example.inmoapp.ui.contratos.ContratoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +36,19 @@ public class PagosFragment extends Fragment {
         binding = FragmentPagosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        RecyclerView recyclerView = binding.rvListaPagos;
+        RecyclerView recyclerView = binding.rvListaContratosPagos;
         GridLayoutManager grilla = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(grilla);
 
-        List<Pago> pago = new ArrayList<>();
-        pago = (List<Pago>) getArguments().getSerializable("pagos");
+        mViewModel.setContratos().observe(getViewLifecycleOwner(), new Observer<List<Contrato>>() {
+            @Override
+            public void onChanged(List<Contrato> contratos) {
+                ContratoPagoAdapter adapter = new ContratoPagoAdapter(getContext(),  contratos, getLayoutInflater());
+                recyclerView.setAdapter(adapter);
+            }
+        });
 
-        PagoAdapter adapter = new PagoAdapter(getContext(),  pago, getLayoutInflater());
-        recyclerView.setAdapter(adapter);
+        mViewModel.getContratos();
 
         return root;
     }

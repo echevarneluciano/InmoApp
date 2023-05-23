@@ -1,4 +1,4 @@
-package com.example.inmoapp.ui.contratos;
+package com.example.inmoapp.ui.pagos;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -19,17 +19,15 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.inmoapp.R;
 import com.example.inmoapp.modelo.Contrato;
-import com.example.inmoapp.modelo.Inquilino;
-import com.example.inmoapp.request.ApiClient;
 
 import java.util.List;
 
-public class ContratoAdapter extends  RecyclerView.Adapter<ContratoAdapter.ViewHolder> {
+public class ContratoPagoAdapter extends  RecyclerView.Adapter<ContratoPagoAdapter.ViewHolder> {
     private Context context;
     private List<Contrato> contratos;
     private LayoutInflater layoutInflater;
 
-    public ContratoAdapter(Context context, List<Contrato> contratos, LayoutInflater layoutInflater) {
+    public ContratoPagoAdapter(Context context, List<Contrato> contratos, LayoutInflater layoutInflater) {
         this.context = context;
         this.contratos = contratos;
         this.layoutInflater = layoutInflater;
@@ -38,7 +36,7 @@ public class ContratoAdapter extends  RecyclerView.Adapter<ContratoAdapter.ViewH
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View root=layoutInflater.inflate(R.layout.contratoinmueble,parent,false);
+        View root=layoutInflater.inflate(R.layout.contrato,parent,false);
         return new ViewHolder(root);
     }
 
@@ -46,13 +44,11 @@ public class ContratoAdapter extends  RecyclerView.Adapter<ContratoAdapter.ViewH
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.direccion.setText(contratos.get(position).getInmueble().getDireccion()+"");
-        String esta = contratos.get(position).getInmueble().isEstado() ? "Activo" : "Inactivo";
-        holder.estado.setText(esta);
-        Glide.with(context)
-                .load(contratos.get(position).getInmueble().getImagen())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.imagen);
+        holder.finicio.setText(contratos.get(position).getFechaInicio());
+        holder.ffin.setText(contratos.get(position).getFechaFin());
+        holder.inquilino.setText(contratos.get(position).getInquilino().getNombre());
+        holder.propiedad.setText(contratos.get(position).getInmueble().getDireccion());
+        holder.monto.setText(String.valueOf(contratos.get(position).getMontoAlquiler()));
 
     }
 
@@ -62,25 +58,26 @@ public class ContratoAdapter extends  RecyclerView.Adapter<ContratoAdapter.ViewH
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView direccion,estado;
-        ImageView imagen;
-        Button btnContrato;;
+        TextView finicio,ffin,inquilino,propiedad,monto;
+        Button btnPago;;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            direccion=itemView.findViewById(R.id.tvDireccionC);
-            estado=itemView.findViewById(R.id.tvEstadoC);
-            imagen=itemView.findViewById(R.id.ivImagenC);
-            btnContrato=itemView.findViewById(R.id.btnDetalleC);
+            inquilino=itemView.findViewById(R.id.tvCInquilino);
+            propiedad=itemView.findViewById(R.id.tvCInmueble);
+            monto=itemView.findViewById(R.id.tvCMonto);
+            finicio=itemView.findViewById(R.id.tvCFinicio);
+            ffin=itemView.findViewById(R.id.tvCFfin);
+            btnPago=itemView.findViewById(R.id.btCPagos);
 
-            btnContrato.setOnClickListener(new View.OnClickListener() {
+            btnPago.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("contrato", contratos.get(getAdapterPosition()));
 
-                    Navigation.findNavController( (Activity)context,R.id.nav_host_fragment_content_escritorio).navigate(R.id.action_nav_contratos_to_elContratoFragment,bundle);
+                    Navigation.findNavController( (Activity)context,R.id.nav_host_fragment_content_escritorio).navigate(R.id.action_nav_pagos_to_pagosContratoFragment,bundle);
                 }
             });
         }

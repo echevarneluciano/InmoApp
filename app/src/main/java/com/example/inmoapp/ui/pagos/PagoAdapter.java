@@ -1,23 +1,17 @@
-package com.example.inmoapp.ui.contratos;
+package com.example.inmoapp.ui.pagos;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inmoapp.R;
-import com.example.inmoapp.modelo.Contrato;
 import com.example.inmoapp.modelo.Pago;
-import com.example.inmoapp.request.ApiClient;
 
 import java.util.List;
 

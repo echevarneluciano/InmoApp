@@ -25,6 +25,10 @@
             android:icon="?android:attr/actionModeFindDrawable"
             android:title="@string/menu_contratos" />
         <item
+            android:id="@+id/nav_pagos"
+            android:icon="@android:drawable/checkbox_on_background"
+            android:title="@string/menu_pagos" />
+        <item
             android:id="@+id/nav_logout"
             android:icon="?attr/homeAsUpIndicator"
             android:title="@string/menu_logout" />
