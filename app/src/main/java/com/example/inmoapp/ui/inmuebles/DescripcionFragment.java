@@ -35,6 +35,8 @@ public class DescripcionFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        mViewModel = new ViewModelProvider(this).get(DescripcionViewModel.class);
+
         binding = FragmentDescripcionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -44,7 +46,9 @@ public class DescripcionFragment extends Fragment {
         cargaDatos(inmueble);
 
         binding.swDActivo.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            inmueble.setEstado(isChecked);
+            int estado = isChecked ? 1 : 0;
+            mViewModel.cambiaEstado(inmueble);
+            inmueble.setEstado(estado);
         });
 
         return root;
@@ -59,12 +63,14 @@ public class DescripcionFragment extends Fragment {
 
     public void cargaDatos(Inmueble inmueble){
 
+        boolean check = inmueble.isEstado() == 1 ? true : false;
+
         binding.tvDDireccion.setText(inmueble.getDireccion());
         binding.tvDUso.setText(inmueble.getUso());
         binding.tvDTipo.setText(inmueble.getTipo());
         binding.tvDAmbientes.setText(String.valueOf(inmueble.getAmbientes()));
         binding.tvDPrecio.setText(String.valueOf(inmueble.getPrecio()));
-        binding.swDActivo.setChecked(inmueble.isEstado());
+        binding.swDActivo.setChecked(check);
 
         Glide.with(getContext())
                 .load(inmueble.getImagen())

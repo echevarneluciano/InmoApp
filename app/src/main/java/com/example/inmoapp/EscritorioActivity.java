@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.inmoapp.modelo.Propietario;
 import com.example.inmoapp.request.ApiClient;
 import com.google.android.material.navigation.NavigationView;
@@ -65,7 +67,12 @@ public class EscritorioActivity extends AppCompatActivity {
         escritorioActivity.getPropietario().observe(this, new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
-                imageView.setImageResource(propietario.getAvatar());
+                //imageView.setImageResource(propietario.getAvatar());
+                Glide.with(EscritorioActivity.this)
+                        //.load("http://10.120.10.172:5200/"+propietario.getAvatar())
+                        .load("http://192.168.15.31:5200/"+propietario.getAvatar())
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(imageView);
                 textViewMail.setText(propietario.getEmail());
                 textViewNombre.setText(propietario.getNombre());
             }

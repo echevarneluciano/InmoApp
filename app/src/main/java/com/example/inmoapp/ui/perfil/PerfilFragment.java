@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.inmoapp.EscritorioActivity;
 import com.example.inmoapp.R;
 import com.example.inmoapp.databinding.FragmentPerfilBinding;
 import com.example.inmoapp.modelo.Propietario;
@@ -76,7 +79,12 @@ public class PerfilFragment extends Fragment {
         binding.tvMail.setEnabled(false);
         binding.tvTel.setText(pro.getTelefono());
         binding.tvTel.setEnabled(false);
-        binding.ivPropietario.setImageResource(pro.getAvatar());
+        //binding.ivPropietario.setImageResource(pro.getAvatar());
+        Glide.with(getContext())
+                //.load("http://10.120.10.172:5200/"+pro.getAvatar())
+                .load("http://192.168.15.31:5200/"+pro.getAvatar())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(binding.ivPropietario);
     }
 
 

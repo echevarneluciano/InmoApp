@@ -47,7 +47,7 @@ public class ContratoAdapter extends  RecyclerView.Adapter<ContratoAdapter.ViewH
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.direccion.setText(contratos.get(position).getInmueble().getDireccion()+"");
-        String esta = contratos.get(position).getInmueble().isEstado() ? "Activo" : "Inactivo";
+        String esta = contratos.get(position).getInmueble().isEstado() == 1 ? "Activo" : "Inactivo";
         holder.estado.setText(esta);
         Glide.with(context)
                 .load(contratos.get(position).getInmueble().getImagen())

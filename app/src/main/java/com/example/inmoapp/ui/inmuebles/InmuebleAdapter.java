@@ -46,7 +46,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.direccion.setText(inmuebles.get(position).getDireccion()+"");
-        String esta = inmuebles.get(position).isEstado() ? "Activo" : "Inactivo";
+        String esta = inmuebles.get(position).isEstado() == 1 ? "Activo" : "Inactivo";
         holder.estado.setText(esta);
         Glide.with(context)
                 .load(inmuebles.get(position).getImagen())

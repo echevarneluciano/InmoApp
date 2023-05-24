@@ -11,10 +11,10 @@ public class Propietario {
     private String email;
     private String clave;
     private String telefono;
-    private int avatar;
+    private String avatar;
 
     public Propietario(){}
-    public Propietario(int id, String dni, String nombre, String apellido, String email, String clave, String telefono, int avatar) {
+    public Propietario(int id, String dni, String nombre, String apellido, String email, String clave, String telefono, String avatar) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
@@ -81,11 +81,11 @@ public class Propietario {
         this.telefono = telefono;
     }
 
-    public int getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(int avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 
