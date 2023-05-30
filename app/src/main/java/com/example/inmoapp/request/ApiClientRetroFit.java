@@ -62,6 +62,12 @@ public class ApiClientRetroFit {
         @PUT("Inmuebles/actualizar")
         Call<Inmueble> actualizarEstado(@Header("Authorization") String token, @Body Inmueble inmueble);
 
+        @GET("Contratos")
+        Call<List<Contrato>> obtenerContratos(@Header("Authorization") String token);
+
+        @POST("Pagos/contrato")
+        Call<List<Pago>> pagosPorContrato(@Header("Authorization") String token, @Body Contrato contrato);
+
     }
 
 }

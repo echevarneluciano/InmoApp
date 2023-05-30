@@ -136,7 +136,7 @@ public class ApiClient {
         propietarios.add(sonia);
 
         //Inquilinos
-        Inquilino mario=new Inquilino(100,25340691L,"Mario","Luna","Aiello sup.","luna@mail.com","2664253411","Lucero Roberto","2664851422");
+        Inquilino mario=new Inquilino(100,"25340691L","Mario","Luna","luna@mail.com","2664253411");
         inquilinos.add(mario);
 
         //Inmuebles
@@ -153,12 +153,12 @@ public class ApiClient {
         inmuebles.add(casita);
 
         //Contratos
-        Contrato uno=new Contrato(701, "05/08/2020","05/08/2023",17000,mario,otraCasa);
-        contratos.add(uno);
+        //Contrato uno=new Contrato(701, "05/08/2020","05/08/2023",17000,mario,otraCasa);
+        //contratos.add(uno);
         //Pagos
-        pagos.add(new Pago(900,1,uno,17000,"10/08/2020"));
-        pagos.add(new Pago(901,2,uno,17000,"10/09/2020"));
-        pagos.add(new Pago(902,3,uno,17000,"10/10/2020"));
+        //pagos.add(new Pago(900,1,uno,2020/10/10,17000));
+        //pagos.add(new Pago(901,2,uno,17000,"10/09/2020"));
+        //pagos.add(new Pago(902,3,uno,17000,"10/10/2020"));
 
 
 

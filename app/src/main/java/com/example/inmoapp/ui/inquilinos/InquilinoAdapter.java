@@ -46,7 +46,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.dni.setText(String.valueOf(inquilinos.get(position).getDNI()));
+        holder.dni.setText(String.valueOf(inquilinos.get(position).getDni()));
         holder.nombre.setText(inquilinos.get(position).getNombre()+"");
         holder.apellido.setText(inquilinos.get(position).getApellido()+"");
 

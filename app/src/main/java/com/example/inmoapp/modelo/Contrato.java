@@ -1,33 +1,35 @@
 package com.example.inmoapp.modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 public class Contrato implements Serializable {
 
-    private int idContrato;
+    private int id;
     private String fechaInicio;
     private String fechaFin;
-    private double montoAlquiler;
+    private int precio;
     private Inquilino inquilino;
     private Inmueble inmueble;
 
     public Contrato() {}
-    public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble) {
-        this.idContrato = idContrato;
+
+    public Contrato(int id, String fechaInicio, String fechaFin, int precio, Inquilino inquilino, Inmueble inmueble) {
+        this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.montoAlquiler = montoAlquiler;
+        this.precio = precio;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
     }
 
-    public int getIdContrato() {
-        return idContrato;
+    public int getId() {
+        return id;
     }
 
-    public void setIdContrato(int idContrato) {
-        this.idContrato = idContrato;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFechaInicio() {
@@ -46,14 +48,13 @@ public class Contrato implements Serializable {
         this.fechaFin = fechaFin;
     }
 
-    public double getMontoAlquiler() {
-        return montoAlquiler;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setMontoAlquiler(double montoAlquiler) {
-        this.montoAlquiler = montoAlquiler;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
-
 
     public Inquilino getInquilino() {
         return inquilino;
@@ -72,15 +73,7 @@ public class Contrato implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contrato contrato = (Contrato) o;
-        return idContrato == contrato.idContrato;
-    }
-
-    @Override
     public int hashCode() {
-        return Objects.hash(idContrato);
+        return Objects.hash(id);
     }
 }

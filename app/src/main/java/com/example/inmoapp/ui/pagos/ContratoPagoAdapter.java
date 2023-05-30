@@ -44,11 +44,11 @@ public class ContratoPagoAdapter extends  RecyclerView.Adapter<ContratoPagoAdapt
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.finicio.setText(contratos.get(position).getFechaInicio());
-        holder.ffin.setText(contratos.get(position).getFechaFin());
+        holder.finicio.setText(String.valueOf(contratos.get(position).getFechaInicio()));
+        holder.ffin.setText( String.valueOf(contratos.get(position).getFechaFin()) );
         holder.inquilino.setText(contratos.get(position).getInquilino().getNombre());
         holder.propiedad.setText(contratos.get(position).getInmueble().getDireccion());
-        holder.monto.setText(String.valueOf(contratos.get(position).getMontoAlquiler()));
+        holder.monto.setText(String.valueOf(contratos.get(position).getPrecio()));
 
     }
 

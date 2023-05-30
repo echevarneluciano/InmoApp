@@ -57,13 +57,9 @@ public class DetallesFragment extends Fragment {
 
         binding.tvDApellido.setText(inquilino.getApellido());
         binding.tvDNombre.setText(inquilino.getNombre());
-        binding.tvDDni.setText(String.valueOf(inquilino.getDNI()));
+        binding.tvDDni.setText(String.valueOf(inquilino.getDni()));
         binding.tvDTelefono.setText(String.valueOf(inquilino.getTelefono()));
         binding.tvDEmail.setText(inquilino.getEmail());
-        binding.tvDGaranteNombre.setText(inquilino.getNombreGarante());
-        binding.tvDGaranteTelefono.setText(String.valueOf(inquilino.getTelefonoGarante()));
-        binding.tvDTrabajo.setText(inquilino.getLugarDeTrabajo());
-
     }
 
 }

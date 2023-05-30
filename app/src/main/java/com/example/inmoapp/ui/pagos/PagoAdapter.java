@@ -39,10 +39,9 @@ public class PagoAdapter extends RecyclerView.Adapter<PagoAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull PagoAdapter.ViewHolder holder, int position) {
 
         holder.contratoPago.setText(pagos.get(position).getContrato().getInmueble().getDireccion());
-        holder.numPago.setText(String.valueOf(pagos.get(position).getNumero()));
-        holder.fechaPago.setText(pagos.get(position).getFechaDePago());
+        holder.numPago.setText(String.valueOf(pagos.get(position).getMes()));
+        holder.fechaPago.setText(String.valueOf(pagos.get(position).getFechaPagado()));
         holder.montoPago.setText(String.valueOf(pagos.get(position).getImporte()));
-
     }
 
     @Override

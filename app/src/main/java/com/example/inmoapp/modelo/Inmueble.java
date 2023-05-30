@@ -11,7 +11,7 @@ public class Inmueble implements Serializable {
     private String tipo;
     private int ambientes;
     private double precio;
-    private Propietario propietario;
+    private Propietario duenio;
     //En falso significa que el innmueble no está disponible por alguna falla en el mismo.
     private int estado = 1;
     private String imagen;
@@ -23,7 +23,7 @@ public class Inmueble implements Serializable {
         this.tipo = tipo;
         this.ambientes = ambientes;
         this.precio = precio;
-        this.propietario = propietario;
+        this.duenio = propietario;
         this.estado = estado;
         this.imagen = imagen;
     }
@@ -79,11 +79,11 @@ public class Inmueble implements Serializable {
     }
 
     public Propietario getPropietario() {
-        return propietario;
+        return duenio;
     }
 
     public void setPropietario(Propietario propietario) {
-        this.propietario = propietario;
+        this.duenio = propietario;
     }
 
     public int isEstado() {

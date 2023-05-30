@@ -41,10 +41,10 @@ public class ElContratoFragment extends Fragment {
 
         Contrato contrato = (Contrato) getArguments().getSerializable("contrato");
 
-        mBinding.tvCFfin.setText(contrato.getFechaFin());
-        mBinding.tvCFinicio.setText(contrato.getFechaInicio());
+        mBinding.tvCFfin.setText(String.valueOf(contrato.getFechaFin()));
+        mBinding.tvCFinicio.setText( String.valueOf(contrato.getFechaInicio()));
         mBinding.tvCInmueble.setText(contrato.getInmueble().getDireccion());
-        mBinding.tvCMonto.setText(String.valueOf(contrato.getMontoAlquiler()));
+        mBinding.tvCMonto.setText(String.valueOf(contrato.getPrecio()));
         mBinding.tvCInquilino.setText(contrato.getInquilino().getNombre());
 
 
