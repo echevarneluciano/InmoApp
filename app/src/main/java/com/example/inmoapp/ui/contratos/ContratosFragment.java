@@ -39,7 +39,7 @@ public class ContratosFragment extends Fragment {
         View root = binding.getRoot();
 
         RecyclerView recyclerView = binding.rvListaContratos;
-        GridLayoutManager grilla = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
+        GridLayoutManager grilla = new GridLayoutManager(getActivity(),1,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(grilla);
         mViewModel.getContratos();
 

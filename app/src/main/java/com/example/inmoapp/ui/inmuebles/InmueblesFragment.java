@@ -34,7 +34,7 @@ public class InmueblesFragment extends Fragment {
         View root = binding.getRoot();
 
         RecyclerView recyclerView = binding.rvListaInmuebles;
-        GridLayoutManager grilla = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
+        GridLayoutManager grilla = new GridLayoutManager(getActivity(),1,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(grilla);
 
         inmueblesViewModel.getPropiedades().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {

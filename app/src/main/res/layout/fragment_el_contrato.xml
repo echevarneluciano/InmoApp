@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="187dp"
-    android:layout_height="460dp"
+    android:layout_height="470dp"
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
@@ -21,7 +21,7 @@
             android:id="@+id/tvCInmueble2"
             android:layout_width="101dp"
             android:layout_height="28dp"
-            android:layout_marginTop="41dp"
+            android:layout_marginTop="50dp"
             android:text="Inmueble:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
             android:id="@+id/tvCFinicio2"
             android:layout_width="101dp"
             android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Fecha inicio:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCInquilino2" />
@@ -39,7 +39,7 @@
             android:id="@+id/tvCFfin2"
             android:layout_width="101dp"
             android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Fecha fin:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCFinicio2" />
@@ -48,7 +48,7 @@
             android:id="@+id/tvCMonto2"
             android:layout_width="101dp"
             android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Monto:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCFfin2" />
@@ -57,52 +57,52 @@
             android:id="@+id/tvCInquilino2"
             android:layout_width="101dp"
             android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Inquilino:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCInmueble2" />
 
         <TextView
             android:id="@+id/tvCInmueble"
-            android:layout_width="101dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="75dp"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="90dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCInquilino"
-            android:layout_width="101dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCInmueble" />
 
         <TextView
             android:id="@+id/tvCFinicio"
-            android:layout_width="101dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCInquilino" />
 
         <TextView
             android:id="@+id/tvCFfin"
-            android:layout_width="101dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCFinicio" />
 
         <TextView
             android:id="@+id/tvCMonto"
-            android:layout_width="101dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCFfin" />

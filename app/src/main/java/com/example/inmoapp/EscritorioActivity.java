@@ -2,6 +2,7 @@ package com.example.inmoapp;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CALL_PHONE;
 
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -46,6 +47,8 @@ public class EscritorioActivity extends AppCompatActivity {
 
         escritorioActivity = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(EscritorioActivityViewModel.class);
 
+        escritorioActivity.startShakeDetection();
+
         setSupportActionBar(binding.appBarEscritorio.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -79,7 +82,19 @@ public class EscritorioActivity extends AppCompatActivity {
         });
 
         escritorioActivity.setPropietario();
-        solicitarPermisos();
+
+        escritorioActivity.getPermissionGranted().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if(aBoolean){
+                    solicitarPermisoLlamada();
+                }
+            }
+        });
+
+        solicitarPermisoNavegacion();
+
+
 
     }
 
@@ -97,12 +112,26 @@ public class EscritorioActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void solicitarPermisos() {
+    public void solicitarPermisoNavegacion() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
                 && (ContextCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) ||
                 (ContextCompat.checkSelfPermission(this, ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
             requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, 1000);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        escritorioActivity.stopShakeDetection();
+    }
+
+    public void solicitarPermisoLlamada() {
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M
+                &&checkSelfPermission(CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{CALL_PHONE},2000);
+        }else {escritorioActivity.llamar();}
     }
 
 }

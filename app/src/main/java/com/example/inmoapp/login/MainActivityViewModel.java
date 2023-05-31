@@ -51,6 +51,8 @@ public class MainActivityViewModel extends AndroidViewModel {
                             Intent intent = new Intent(context, EscritorioActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             context.startActivity(intent);
+                        }else{
+                            Toast.makeText(context,"Error al iniciar sesion",Toast.LENGTH_LONG).show();
                         }
                     }
                 }

@@ -68,52 +68,52 @@
 
             <TextView
                 android:id="@+id/tvDDni"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="65dp"
+                android:layout_marginEnd="10dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDDni2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvDNombre"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDDni" />
 
             <TextView
                 android:id="@+id/tvDApellido"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDApellido2"
                 app:layout_constraintTop_toBottomOf="@+id/tvDNombre" />
 
             <TextView
                 android:id="@+id/tvDEmail"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDEmail2"
                 app:layout_constraintTop_toBottomOf="@+id/tvDApellido" />
 
             <TextView
                 android:id="@+id/tvDTelefono"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDEmail" />
 
             <TextView
